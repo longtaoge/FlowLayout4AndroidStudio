@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\longtaoge\Desktop\FlowLayout\app\build\intermediates\exploded-aar\FlowLayout\flowlayout\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="22adc2a2f25a433179506cd6699026787076a505">
+        <dex dex="C:\Users\longtaoge\Desktop\FlowLayout\app\build\intermediates\pre-dexed\debug\classes-d1bb6f3e37a96e4574a543f63e860394d4829396.jar" />
+    </item>
+
+</items>

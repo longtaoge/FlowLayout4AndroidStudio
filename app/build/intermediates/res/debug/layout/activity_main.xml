@@ -1,0 +1,64 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="9">
+
+            <ScrollView
+                android:id="@+id/scrollView1"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="false">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <org.xiangbalao.flowlayout.FlowLayout
+                        android:id="@+id/mFlowLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </org.xiangbalao.flowlayout.FlowLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/lodingText"
+                android:layout_width="match_parent"
+                android:layout_height="50px"
+                android:layout_marginTop="20dp"
+
+                android:contentDescription="加载文字"
+                android:gravity="center_horizontal"
+                android:text="加载文字" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout><!-- From: file:/C:/Users/longtaoge/Desktop/FlowLayout/app/src/main/res/layout/activity_main.xml -->
