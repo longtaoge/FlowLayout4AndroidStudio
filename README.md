@@ -1,6 +1,9 @@
 # FlowLayout4AndroidStudio
 
-![](https://travis-ci.org/longtaoge/FlowLayout4AndroidStudio.svg)
+
+  [ ![Download](https://api.bintray.com/packages/longtaoge/maven/FlowlayoutView/images/download.svg) ](https:bintray.com/longtaoge/maven/FlowlayoutView/_latestVersion)
+
+----------
 
 由 FlowLayout eclispse 迁移到 AndroidStudio
 
@@ -15,6 +18,3 @@
     }
 
 
-
-
-[https://bintray.com/longtaoge/maven/FlowlayoutView/0.1/view](https://bintray.com/longtaoge/maven/FlowlayoutView/0.1/view)
