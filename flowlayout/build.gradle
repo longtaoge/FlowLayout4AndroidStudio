@@ -62,17 +62,7 @@ install {
     }
 }
 
-javadoc{
- options{
-     encoding"UTF-8"
-     charSet"UTF-8"
-     author true
-     version true
-     links"http:docs.oracle.com/javase/7/docs/api"
- }
 
-
-}
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -99,8 +89,20 @@ artifacts {
     archives sourcesJar
 }
 
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
+javadoc {
+    options {
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+        links "http://docs.oracle.com/javase/7/docs/api"
+    }
+
+
+}
+
+//Properties properties = new Properties()
+//properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
 //配置上传Bintray相关信息
 bintray {
@@ -108,8 +110,16 @@ bintray {
     //一般的为了保密和安全性，在项目的local.properties文件中添加两行句话即可：
     //bintray.user=username
     //bintray.apikey=apikey
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
+   // bintray.user = properties.getProperty("user")
+   // bintray.apiKey = properties.getProperty("apikey")
+
+   /* if (hasProperty('BINTRAY_USER') && hasProperty('BINTRAY_KEY')) {
+        bintray.user = project.properties['BINTRAY_USER']
+        bintray.key = project.properties['BINTRAY_KEY']
+    }*/
+    bintray.user = project.properties['BINTRAY_USER']
+    bintray.key = project.properties['BINTRAY_KEY']
+
 
     configurations = ['archives']
 
