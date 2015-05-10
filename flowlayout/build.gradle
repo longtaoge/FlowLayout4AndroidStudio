@@ -89,7 +89,7 @@ artifacts {
     archives sourcesJar
 }
 
-javadoc {
+javadoc { //文档编码
     options {
         encoding "UTF-8"
         charSet 'UTF-8'
@@ -113,13 +113,12 @@ bintray {
    // bintray.user = properties.getProperty("user")
    // bintray.apiKey = properties.getProperty("apikey")
 
-   /* if (hasProperty('BINTRAY_USER') && hasProperty('BINTRAY_KEY')) {
+   if (project.hasProperty('BINTRAY_USER') && project.hasProperty('BINTRAY_KEY')) {
         bintray.user = project.properties['BINTRAY_USER']
         bintray.key = project.properties['BINTRAY_KEY']
-    }*/
-    bintray.user = project.properties['BINTRAY_USER']
-    bintray.key = project.properties['BINTRAY_KEY']
-
+    }
+   // bintray.user = project.properties['BINTRAY_USER']
+    //bintray.key = project.properties['BINTRAY_KEY']
 
     configurations = ['archives']
 
