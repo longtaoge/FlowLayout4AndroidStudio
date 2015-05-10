@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.Looper;
 
 /**
- * Created by lipan on 2014/7/11.
+ * Created by longtaoge on 2014/7/11.
  */
 public class BaseApplication extends Application {
 	/** 全局Context，原理是因为Application类是应用最先运行的，所以在我们的代码调用时，该值已经被赋值过了 */
