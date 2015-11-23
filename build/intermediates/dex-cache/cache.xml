@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="J:\domes\FlowLayout4AndroidStudio\app\build\intermediates\exploded-aar\org.xiangbalao.flowlayout\flowlayout\unspecified\jars\classes.jar"
+        jar="C:\Users\longtaoge\Desktop\FlowLayout4AndroidStudio\app\build\intermediates\exploded-aar\org.xiangbalao.flowlayout\flowlayout\1.0.0\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="7384df33760a5685758568c69beb9c264e5289f3">
-        <dex dex="J:\domes\FlowLayout4AndroidStudio\app\build\intermediates\pre-dexed\debug\classes-73a3343026fb78e9705b549738d1d8eaf23c8890.jar" />
+        sha1="1a0ae2bb7ea86bd02aae06cb70fea6c223324d94">
+        <dex dex="C:\Users\longtaoge\Desktop\FlowLayout4AndroidStudio\app\build\intermediates\pre-dexed\debug\classes-89e07839879a62fbdbd46e8873a0e9283e33a60f.jar" />
     </item>
 
 </items>

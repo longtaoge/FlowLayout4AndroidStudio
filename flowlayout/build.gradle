@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
+
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
@@ -18,116 +19,23 @@ android {
         }
     }
 }
-tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
-def siteUrl = "https://github.com/longtaoge/FlowLayout4AndroidStudio"
-def gitUrl = "https://github.com/longtaoge/FlowLayout4AndroidStudio.git"
 
-//填写唯一包名
-group = "org.xiangbalao.flowlayout"
-version = "0.1"
-install {
-    repositories.mavenInstaller {
-        // This generates POM.xml with proper paramters
-        pom {
-            project {
-                packaging 'aar'
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
 
-                //添加项目描述
-                name 'FlowLayoutview for Android'
-                url siteUrl
-
-                //设置开源证书信息
-                licenses {
-                    license {
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                //添加开发者信息
-                developers {
-                    developer {
-                        id 'longtaoge'
-                        name 'longtaoge'
-                        email '61852263@qq.com'
-                    }
-                }
-
-                scm {
-                    connection gitUrl
-                    developerConnection gitUrl
-                    url siteUrl
-                }
-            }
-        }
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1"
     }
 }
 
-
-
+// this script was used to upload files to bintray.
+//   apply from: 'https://raw.githubusercontent.com/msdx/gradle-publish/master/bintray.gradle'
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
 }
-
-
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
-
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-artifacts {
-    archives javadocJar
-    archives sourcesJar
-}
-
-javadoc { //文档编码
-    options {
-        encoding "UTF-8"
-        charSet 'UTF-8'
-        author true
-        version true
-        links "http://docs.oracle.com/javase/7/docs/api"
-    }
-
-
-}
-
-//Properties properties = new Properties()
-//properties.load(project.rootProject.file('local.properties').newDataInputStream())
-
-//配置上传Bintray相关信息
-bintray {
-    //读取Bintray帐号和密码。
-    //一般的为了保密和安全性，在项目的local.properties文件中添加两行句话即可：
-    //bintray.user=username
-    //bintray.apikey=apikey
-   // bintray.user = properties.getProperty("user")
-   // bintray.apiKey = properties.getProperty("apikey")
-
-   if (project.hasProperty('BINTRAY_USER') && project.hasProperty('BINTRAY_KEY')) {
-        bintray.user = project.properties['BINTRAY_USER']
-        bintray.key = project.properties['BINTRAY_KEY']
-    }
-   // bintray.user = project.properties['BINTRAY_USER']
-    //bintray.key = project.properties['BINTRAY_KEY']
-
-    configurations = ['archives']
-
-    pkg {
-        repo = "maven"//上传的中央仓库名称
-        name = "FlowlayoutView"//上传的项目的名字
-        websiteUrl = siteUrl
-        vcsUrl = gitUrl
-        licenses = ["Apache-2.0"]
-        publish = true  //是否发布
-    }
-}
+//apply from: './bintray.gradle'
+//TODO 新版本发布时打开
+//apply from: 'https://raw.githubusercontent.com/msdx/gradle-publish/master/bintray.gradle'
