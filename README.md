@@ -17,7 +17,7 @@
 
 
     dependencies {
-       compile 'org.xiangbalao.flowlayout'
+       compile 'org.xiangbalao.flowlayout:flowlayout:1.0.0'
     }
 
 
