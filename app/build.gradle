@@ -4,6 +4,8 @@ repositories {
     maven {
         url  "http://dl.bintray.com/longtaoge/maven"
     }
+
+    //jcenter()
 }
 android {
     compileSdkVersion 19
